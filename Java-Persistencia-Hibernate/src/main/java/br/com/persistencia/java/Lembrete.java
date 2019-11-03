@@ -1,9 +1,20 @@
 package br.com.persistencia.java;
 
+import javax.persistence.*;
+
+@Entity
 public class Lembrete {
 
+//    Proprio banco de dados vai ficar encarregado de gerar a chave primaria
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    // NOT NULL
+    @Column(nullable = false)
     private String titulo;
+
+    @Column(nullable = false)
     private String descricao;
 
     public long getId() {
