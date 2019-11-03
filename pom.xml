@@ -15,18 +15,20 @@
 		<compiler.version>3.6.1</compiler.version>
 	</properties>
 
-	<!-- Dependencias para utilizar um banco mysql -->
+	<!-- Dependencias para utilizar o entitymaneger do hibernate e um banco mysql -->
 	<dependencies>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-entitymanager</artifactId>
-		<version>${hibernate.version}</version>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.java.version}</version>
+		</dependency>
 	</dependencies>
-	<dependencies>
-		<groupId>mysql</groupId>
-		<artifactId>mysql-connector-java</artifactId>
-		<version>${mysql.connector.java.version}</version>
-	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
