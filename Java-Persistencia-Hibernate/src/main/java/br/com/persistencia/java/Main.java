@@ -20,13 +20,30 @@ public class Main {
         lembrete1.setTitulo("Escrever artigo");
         lembrete1.setDescricao("Hoje, 12:00");
 
-//        Inserindo
+        Lembrete lembrete2 = new Lembrete();
+        lembrete2.setTitulo("Enviar trab persistencia");
+        lembrete2.setDescricao("Terça, 15:00");
 
+        Lembrete lembrete3 = new Lembrete();
+        lembrete3.setTitulo("Fazer matriz origem destino");
+        lembrete3.setDescricao("Quarta, 21:00");
+
+//        Inserindo
+        criarLembrete(lembrete3);
+
+
+//        Listando
+
+        listarLembretes();
+
+    }
+
+    public static void criarLembrete(Lembrete lembreteLocal){
         EntityManager em = entityManagerFactory.createEntityManager();
 
         try {
             em.getTransaction().begin();
-            em.persist(lembrete1);
+            em.persist(lembreteLocal);
             em.getTransaction().commit();
         }catch (Exception e){
             em.getTransaction().rollback();
@@ -36,25 +53,25 @@ public class Main {
 
             em.close();
         }
-
-//        Listando
-//        List <Lembrete> lembretes = null;
-//
-//        EntityManager em = entityManagerFactory.createEntityManager();
-//
-//        try {
-//            lembretes = em.createQuery("from Lembrete ") .getResultList();
-//
-//        }catch (Exception e){
-//            System.out.println("List ALL: " + e.getMessage());
-//        }finally {
-//            em.close();
-//        }
-//
-//        if(lembretes != null){
-//            lembretes.forEach(System.out::println);
-//        }
-
-
     }
+
+    public static void listarLembretes(){
+        List <Lembrete> lembretes = null;
+
+        EntityManager em = entityManagerFactory.createEntityManager();
+
+        try {
+            lembretes = em.createQuery("from Lembrete ") .getResultList();
+
+        }catch (Exception e){
+            System.out.println("List ALL: " + e.getMessage());
+        }finally {
+            em.close();
+        }
+
+        if(lembretes != null){
+            lembretes.forEach(System.out::println);
+        }
+    }
+
 }
