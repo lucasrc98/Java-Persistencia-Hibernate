@@ -40,6 +40,32 @@ public class Main {
 //  Buscando Lembretes por determinado texto no titulo
 //      buscarLembretePorTitulo("entregar");
 
+//  Atualizando por ID
+//      atualizarPorId(2);
+
+
+    }
+
+    public static void atualizarPorId(long idLembreteAtualizar){
+
+        EntityManager em = entityManagerFactory.createEntityManager();
+        Lembrete lembreteAtualizar = null;
+
+        try {
+            lembreteAtualizar = em.find(Lembrete.class, idLembreteAtualizar);
+
+            lembreteAtualizar.setTitulo("Título alterado");
+            lembreteAtualizar.setDescricao("Descrição alterada");
+
+            em.getTransaction().begin();
+            em.merge(lembreteAtualizar);
+            em.getTransaction().commit();
+        }catch (Exception e){
+            em.getTransaction().rollback();
+            System.out.println("UPDATE: " + e.getMessage());
+        }finally {
+            em.close();
+        }
     }
 
     public static void buscarLembretePorTitulo(String contexto){
