@@ -4,6 +4,7 @@
     <list default="true" id="aa1bb661-71a5-48fc-8f38-8dd8f0f6addd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/persistencia/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/persistencia/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/persistencia/java/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/persistencia/java/Main.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,10 +33,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/com/persistencia/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="43" column="8" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+            <state relative-caret-position="102">
+              <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#deleteLembrete#0;class#Main#0" />
+                <element signature="method#atualizarPorId#0;class#Main#0" />
                 <element signature="method#buscarLembretePorAssunto#0;class#Main#0" />
                 <element signature="method#buscarLembrete#0;class#Main#0" />
                 <element signature="method#criarLembrete#0;class#Main#0" />
@@ -132,7 +135,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573011171826" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573011671391" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -188,7 +191,7 @@
       <workItem from="1572825452176" duration="1040000" />
       <workItem from="1572837240917" duration="2238000" />
       <workItem from="1572874332392" duration="1902000" />
-      <workItem from="1573007671376" duration="3497000" />
+      <workItem from="1573007671376" duration="3997000" />
     </task>
     <task id="LOCAL-00001" summary="Buscando por id de Lembrete (findById)">
       <created>1573008664270</created>
@@ -204,11 +207,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573010370718</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update por Id">
+      <created>1573011197471</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573011197471</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16696000" />
+    <option name="totallyTimeSpent" value="17196000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -295,7 +305,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Buscando por id de Lembrete (findById)" />
     <MESSAGE value="Buscando Lembretes por determinado texto no título" />
-    <option name="LAST_COMMIT_MESSAGE" value="Buscando Lembretes por determinado texto no título" />
+    <MESSAGE value="Update por Id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update por Id" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Lembrete.java" />
@@ -363,10 +374,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/persistencia/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="43" column="8" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        <state relative-caret-position="102">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#deleteLembrete#0;class#Main#0" />
+            <element signature="method#atualizarPorId#0;class#Main#0" />
             <element signature="method#buscarLembretePorAssunto#0;class#Main#0" />
             <element signature="method#buscarLembrete#0;class#Main#0" />
             <element signature="method#criarLembrete#0;class#Main#0" />

@@ -40,10 +40,31 @@ public class Main {
 //  Buscando Lembretes por determinado texto no titulo
 //      buscarLembretePorTitulo("entregar");
 
-//  Atualizando por ID
+//  Atualizando Lembrete por Id
 //      atualizarPorId(2);
 
+//  Deletar Lembrete por Id
+//      deleteLembrete(1);
+    }
 
+    public static void deleteLembrete(long idLembreteDelete){
+
+        EntityManager em = entityManagerFactory.createEntityManager();
+        Lembrete lembreteDelete = null;
+
+        try {
+            lembreteDelete = em.find(Lembrete.class, idLembreteDelete);
+
+            em.getTransaction().begin();
+            em.remove(lembreteDelete);
+            em.getTransaction().commit();
+        }catch (Exception e){
+
+            em.getTransaction().rollback();
+            System.out.println("DELETE: " + e.getMessage());
+        }finally {
+            em.close();
+        }
     }
 
     public static void atualizarPorId(long idLembreteAtualizar){
