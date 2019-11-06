@@ -28,14 +28,31 @@ public class Main {
         lembrete3.setTitulo("Fazer matriz origem destino");
         lembrete3.setDescricao("Quarta, 21:00");
 
-//        Inserindo
-        criarLembrete(lembrete3);
+//  Inserindo
+//      criarLembrete(Lembrete lembrete);
 
+//  Listando
+//      listarLembretes();
 
-//        Listando
+//  Buscando por id de Lembrete
+//      buscarLembrete(1L);
 
-        listarLembretes();
+    }
 
+    public static void buscarLembrete(Long idLembrete){
+
+        EntityManager em = entityManagerFactory.createEntityManager();
+
+        try{
+            Lembrete lembreteEncontrado;
+            lembreteEncontrado = em.find(Lembrete.class, idLembrete);
+            System.out.println(lembreteEncontrado);
+
+        }catch (Exception e){
+            System.out.println("FIND: " + e.getMessage());
+        }finally {
+            em.close();
+        }
     }
 
     public static void criarLembrete(Lembrete lembreteLocal){
