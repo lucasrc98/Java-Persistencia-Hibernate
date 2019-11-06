@@ -37,14 +37,38 @@ public class Main {
 //  Buscando por id de Lembrete
 //      buscarLembrete(1L);
 
+//  Buscando Lembretes por determinado texto no titulo
+//      buscarLembretePorTitulo("entregar");
+
+    }
+
+    public static void buscarLembretePorTitulo(String contexto){
+
+        EntityManager em = entityManagerFactory.createEntityManager();
+        List<Lembrete> lembretesEncontrados = null;
+
+        try{
+
+            lembretesEncontrados = em.createQuery("from Lembrete l where l.titulo like '%"+contexto+"%'").getResultList();
+
+        }catch (Exception e){
+            System.out.println("FIND BY TITULO " + e.getMessage());
+        }finally {
+            em.close();
+        }
+
+        if (!lembretesEncontrados.isEmpty()){
+            lembretesEncontrados.forEach(System.out::println);
+        }else
+            System.out.println("Nenhum lembrete encontrado");
     }
 
     public static void buscarLembrete(Long idLembrete){
 
         EntityManager em = entityManagerFactory.createEntityManager();
+        Lembrete lembreteEncontrado = null;
 
         try{
-            Lembrete lembreteEncontrado;
             lembreteEncontrado = em.find(Lembrete.class, idLembrete);
             System.out.println(lembreteEncontrado);
 
@@ -53,6 +77,11 @@ public class Main {
         }finally {
             em.close();
         }
+
+        if(lembreteEncontrado != null){
+            System.out.println(lembreteEncontrado);
+        }else
+            System.out.println("Nenhum lembrete encontrado");
     }
 
     public static void criarLembrete(Lembrete lembreteLocal){
@@ -73,9 +102,9 @@ public class Main {
     }
 
     public static void listarLembretes(){
-        List <Lembrete> lembretes = null;
 
         EntityManager em = entityManagerFactory.createEntityManager();
+        List <Lembrete> lembretes = null;
 
         try {
             lembretes = em.createQuery("from Lembrete ") .getResultList();
@@ -88,7 +117,8 @@ public class Main {
 
         if(lembretes != null){
             lembretes.forEach(System.out::println);
-        }
+        }else
+            System.out.println("Nenhum lembrete encontrado");
     }
 
 }
